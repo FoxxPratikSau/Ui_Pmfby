@@ -6,6 +6,8 @@ import 'package:ui_pmfby/CardDeails/claims_farmer.dart';
 import 'package:ui_pmfby/CardDeails/details_farmer.dart';
 import 'package:ui_pmfby/CardDeails/report_farmer.dart';
 import 'package:ui_pmfby/CardDeails/track_application_farmer.dart';
+import 'package:ui_pmfby/Disease/disease.dart';
+import 'package:ui_pmfby/Weather/view/weather_page.dart';
 
 class FarmerHome extends StatefulWidget {
   const FarmerHome({Key? key}) : super(key: key);
@@ -284,7 +286,10 @@ class _FarmerHomeState extends State<FarmerHome> {
                   children: [
                     Expanded(
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) => WeatherPage()));
+                        },
                         child: Container(
                           width: 100,
                           height: 100,

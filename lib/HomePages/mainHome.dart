@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ui_pmfby/Disease/disease.dart';
 
 import 'FarmerHomePage.dart';
-
 
 class MainHome extends StatefulWidget {
   const MainHome({super.key});
@@ -16,7 +16,7 @@ class _MainHomeState extends State<MainHome> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     FarmerHome(),
-    FarmerHome(),
+    Home(),
   ];
 
   void _onItemTapped(int index) {
@@ -28,21 +28,25 @@ class _MainHomeState extends State<MainHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home,size: 50,),
+            icon: Icon(
+              Icons.home,
+              size: 50,
+            ),
             label: 'Home',
             backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person,size: 50,),
-            label: 'Profile',
+            icon: Icon(
+              Icons.search,
+              size: 50,
+            ),
+            label: 'Disease Recognizer',
             backgroundColor: Colors.green,
           ),
         ],
