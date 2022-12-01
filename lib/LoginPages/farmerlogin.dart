@@ -82,10 +82,7 @@ class _FarmerLoginState extends State<FarmerLogin> {
                 color: Colors.green[600],
                 borderRadius: BorderRadius.circular(20)),
             child: TextButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (_) => MainHome()));
-              },
+              onPressed: signIn,
               child: Text(
                 'Login',
                 style: TextStyle(

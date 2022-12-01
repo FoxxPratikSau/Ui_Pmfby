@@ -32,24 +32,24 @@ class _FarmerHomeState extends State<FarmerHome> {
         backgroundColor: Colors.lightBlueAccent,
         elevation: 0,
       ),
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
-        child: AppBar(
-          backgroundColor: Color(0xFFE2E0EC),
-          automaticallyImplyLeading: false,
-          title: Align(
-            alignment: AlignmentDirectional(-0.05, -0.05),
-            child: Text('PMFBY',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontFamily: GoogleFonts.poppins().fontFamily,
-                    color: Colors.black)),
-          ),
-          actions: [],
-          centerTitle: true,
-          elevation: 0,
-        ),
-      ),
+      // appBar: PreferredSize(
+      //   preferredSize: Size.fromHeight(50),
+      //   child: AppBar(
+      //     backgroundColor: Color(0xFFE2E0EC),
+      //     automaticallyImplyLeading: false,
+      //     title: Align(
+      //       alignment: AlignmentDirectional(-0.05, -0.05),
+      //       child: Text('PMFBY',
+      //           style: TextStyle(
+      //               fontSize: 25,
+      //               fontFamily: GoogleFonts.poppins().fontFamily,
+      //               color: Colors.black)),
+      //     ),
+      //     actions: [],
+      //     centerTitle: true,
+      //     elevation: 0,
+      //   ),
+      // ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: GestureDetector(

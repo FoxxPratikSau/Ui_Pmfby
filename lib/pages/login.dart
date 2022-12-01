@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ui_pmfby/HomePages/GovtHomePage.dart';
+import 'package:ui_pmfby/HomePages/InsuranceHomePage.dart';
 import 'package:ui_pmfby/HomePages/mainHome.dart';
-
 
 import '../LoginPages/companyLogin.dart';
 import '../LoginPages/farmerlogin.dart';
@@ -16,7 +17,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
           elevation: 10,
           backgroundColor: Colors.green,
           title: Text(
-            "PBYJ Login",
+            "PBYJ",
             style: TextStyle(
                 fontFamily: GoogleFonts.poppins().fontFamily,
                 fontWeight: FontWeight.bold),
@@ -79,20 +79,34 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ]),
         ),
-        body:  TabBarView(children: [
+        body: TabBarView(children: [
           StreamBuilder<User?>(
-            stream: FirebaseAuth.instance.authStateChanges(),
-            builder: (context, snapshot) {
-              if(snapshot.hasData){
-                return const MainHome();
-              }else{
-                return const FarmerLogin();
-              }
-              
-            }
-          ),
-          CompanyLogin(),
-          GovtLogin(),
+              stream: FirebaseAuth.instance.authStateChanges(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return const MainHome();
+                } else {
+                  return const FarmerLogin();
+                }
+              }),
+          StreamBuilder<User?>(
+              stream: FirebaseAuth.instance.authStateChanges(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return const GovtHomePage();
+                } else {
+                  return const GovtLogin();
+                }
+              }),
+          StreamBuilder<User?>(
+              stream: FirebaseAuth.instance.authStateChanges(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return const InsuranceHomePage();
+                } else {
+                  return const CompanyLogin();
+                }
+              }),
         ]),
       ),
     );
