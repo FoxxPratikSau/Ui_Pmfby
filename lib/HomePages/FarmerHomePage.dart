@@ -6,6 +6,7 @@ import 'package:ui_pmfby/CardDeails/claims_farmer.dart';
 import 'package:ui_pmfby/CardDeails/details_farmer.dart';
 import 'package:ui_pmfby/CardDeails/report_farmer.dart';
 import 'package:ui_pmfby/CardDeails/track_application_farmer.dart';
+import 'package:ui_pmfby/ChatBot/chatbot_home.dart';
 import 'package:ui_pmfby/Disease/disease.dart';
 import 'package:ui_pmfby/Weather/view/weather_page.dart';
 
@@ -27,7 +28,8 @@ class _FarmerHomeState extends State<FarmerHome> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.message),
         onPressed: () {
-          print('FloatingActionButton pressed ...');
+          Navigator.push(
+              context, MaterialPageRoute(builder: (_) => ChatBotHome()));
         },
         backgroundColor: Colors.lightBlueAccent,
         elevation: 0,

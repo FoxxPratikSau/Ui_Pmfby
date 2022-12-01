@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_pmfby/Disease/disease.dart';
+import 'package:ui_pmfby/yeildModel/yeildScreen.dart';
 
 import 'FarmerHomePage.dart';
 
@@ -17,6 +18,7 @@ class _MainHomeState extends State<MainHome> {
   static const List<Widget> _widgetOptions = <Widget>[
     FarmerHome(),
     Home(),
+    YieldScreen()
   ];
 
   void _onItemTapped(int index) {
@@ -47,6 +49,14 @@ class _MainHomeState extends State<MainHome> {
               size: 50,
             ),
             label: 'Disease Recognizer',
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.money,
+              size: 50,
+            ),
+            label: 'Yeild',
             backgroundColor: Colors.green,
           ),
         ],

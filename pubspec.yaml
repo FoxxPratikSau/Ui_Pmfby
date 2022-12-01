@@ -29,21 +29,22 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  anim_search_bar: ^2.0.2
   cloud_firestore: ^4.1.0
   cupertino_icons: ^1.0.2
+  dialog_flowtter: ^0.3.3
   firebase_auth: ^4.1.4
   firebase_core: ^2.3.0
   flutter:
     sdk: flutter
   flutterfire_cli: ^0.2.7
+  geocoding: ^2.0.4
   google_fonts: ^3.0.1
+  html: ^0.15.1
   http: ^0.13.5
   image_picker: ^0.8.6
   order_tracker: ^0.0.2
   tflite: ^1.1.2
-  geocoding: ^2.0.4
-  # geolocator: ^9.0.1
-  anim_search_bar: ^2.0.2
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -62,6 +63,7 @@ flutter:
   assets:
     - assets/labels.txt
     - assets/model.tflite
+    - assests/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

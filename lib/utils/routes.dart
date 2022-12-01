@@ -9,4 +9,5 @@ class MyRoutes {
   static String Register = "/register";
   static String FarmerHome ="/farmerhome";
   static String MainHome="/mainhome";
+  static String MainLogin="/mainlogin";
 }

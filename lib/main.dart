@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_pmfby/Weather/logic/services/call_to_api.dart';
+
 import 'package:ui_pmfby/pages/login.dart';
 import 'package:ui_pmfby/utils/routes.dart';
 
@@ -9,7 +10,6 @@ import 'HomePages/mainHome.dart';
 import 'Weather/logic/models/weather_model.dart';
 
 Future main() async {
- 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
