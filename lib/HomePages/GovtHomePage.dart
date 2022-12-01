@@ -1,187 +1,138 @@
-import 'dart:ui';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:ui_pmfby/CardDeails/changes_pmfby_insurance.dart';
-import 'package:ui_pmfby/CardDeails/claims_farmer.dart';
-import 'package:ui_pmfby/CardDeails/company_list_govt.dart';
-import 'package:ui_pmfby/CardDeails/details_farmer.dart';
-import 'package:ui_pmfby/CardDeails/report_farmer.dart';
-import 'package:ui_pmfby/CardDeails/track_application_farmer.dart';
-import 'package:ui_pmfby/CardDeails/track_application_govt.dart';
-import 'package:ui_pmfby/CardDeails/track_insurance_claims.dart';
 
-class GovtHomePage extends StatefulWidget {
-  const GovtHomePage({Key? key}) : super(key: key);
+import 'package:google_fonts/google_fonts.dart';
+import 'package:ui_pmfby/HomePages/GovtHomePage.dart';
+
+import '../HomePages/mainHome.dart';
+
+class GovtLogin extends StatefulWidget {
+  const GovtLogin({super.key});
 
   @override
-  _GovtHomePageState createState() => _GovtHomePageState();
+  State<GovtLogin> createState() => _GovtLoginState();
 }
 
-class _GovtHomePageState extends State<GovtHomePage> {
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+class _GovtLoginState extends State<GovtLogin> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
       backgroundColor: Colors.white,
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.message),
-        onPressed: () {
-          print('FloatingActionButton pressed ...');
-        },
-        backgroundColor: Colors.lightBlueAccent,
-        elevation: 0,
-      ),
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
-        child: AppBar(
-          backgroundColor: Color(0xFFE2E0EC),
-          automaticallyImplyLeading: false,
-          title: Align(
-            alignment: AlignmentDirectional(-0.05, -0.05),
-            child: Text('PMFBY',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontFamily: GoogleFonts.poppins().fontFamily,
-                    color: Colors.black)),
-          ),
-          actions: [],
-          centerTitle: true,
-          elevation: 0,
-        ),
-      ),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: GestureDetector(
-            onTap: () => FocusScope.of(context).unfocus(),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Container(
-                  child: Text(
-                    "Welcome",
-                    style: TextStyle(
-                        fontFamily: GoogleFonts.poppins().fontFamily,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 60),
-                  ),
-                ),
-                SizedBox(height: 25, width: 25),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) =>
-                                      const TrackApplicationGovt()));
-                        },
-                        child: Container(
-                          width: 100,
-                          height: 100,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFA4BE7B),
-                            borderRadius: BorderRadius.circular(25),
-                            shape: BoxShape.rectangle,
-                          ),
-                          child: Align(
-                            alignment: AlignmentDirectional(0, 0),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 0, 0, 0),
-                                  child: Image.network(
-                                    'https://cdn-icons-png.flaticon.com/512/1150/1150592.png',
-                                    width: 60,
-                                    height: 60,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 50,
-                                ),
-                                Text(
-                                  'Track An Application',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      fontFamily:
-                                          GoogleFonts.poppins().fontFamily,
-                                      color: Colors.black),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 25, width: 25),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => CompanyListGovt()));
-                        },
-                        child: Container(
-                          width: 100,
-                          height: 100,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFA4BE7B),
-                            borderRadius: BorderRadius.circular(25),
-                            shape: BoxShape.rectangle,
-                          ),
-                          child: Align(
-                            alignment: AlignmentDirectional(0, 0),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 0, 0, 0),
-                                  child: Image.network(
-                                    'https://cdn-icons-png.flaticon.com/512/3273/3273365.png',
-                                    width: 60,
-                                    height: 60,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 50,
-                                ),
-                                Text(
-                                  'Company wise client list ',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: 22,
-                                      fontFamily:
-                                          GoogleFonts.poppins().fontFamily,
-                                      color: Colors.black),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top: 60.0),
+            child: Center(
+              child: SizedBox(
+                  width: 200,
+                  height: 150,
+                  /*decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(50.0)),*/
+                  child: Image.network(
+                      "https://uxdt.nic.in/wp-content/uploads/2020/06/Pradhanmantri_phasal-Preview.png?x74032")),
             ),
           ),
-        ),
+          Padding(
+            //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
+            padding: EdgeInsets.symmetric(horizontal: 15),
+            child: TextField(
+              controller: emailController,
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Email ID',
+                  hintText: 'Enter valid FarmerID'),
+            ),
+          ),
+          Padding(
+            padding:
+                EdgeInsets.only(left: 15.0, right: 15.0, top: 15, bottom: 0),
+            //padding: EdgeInsets.symmetric(horizontal: 15),
+            child: TextField(
+              controller: passwordController,
+              obscureText: true,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
+                  hintText: 'Enter secure password'),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              //TODO FORGOT PASSWORD SCREEN GOES HERE
+            },
+            child: const Text(
+              'Forgot Password',
+              style: TextStyle(color: Colors.blue, fontSize: 15),
+            ),
+          ),
+          Container(
+            height: 50,
+            width: 250,
+            decoration: BoxDecoration(
+                color: Colors.green[600],
+                borderRadius: BorderRadius.circular(20)),
+            child: TextButton(
+              onPressed: signIn,
+              child: Text(
+                'Login',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontFamily: GoogleFonts.poppins().fontFamily),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 13,
+          ),
+          Text(
+            "OR",
+            style: TextStyle(
+                fontFamily: GoogleFonts.poppins().fontFamily, fontSize: 15),
+          ),
+          const SizedBox(
+            height: 13,
+          ),
+          Container(
+            height: 50,
+            width: 250,
+            decoration: BoxDecoration(
+                color: Colors.green[600],
+                borderRadius: BorderRadius.circular(20)),
+            child: TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => MainHome()));
+              },
+              child: Text(
+                'Register',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontFamily: GoogleFonts.poppins().fontFamily),
+              ),
+            ),
+          ),
+        ],
       ),
     );
+  }
+
+  Future signIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim());
   }
 }
