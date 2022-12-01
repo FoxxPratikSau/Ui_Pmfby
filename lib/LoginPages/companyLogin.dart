@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ui_pmfby/HomePages/InsuranceHomePage.dart';
 import 'package:ui_pmfby/HomePages/mainHome.dart';
-
-
 
 class CompanyLogin extends StatefulWidget {
   const CompanyLogin({super.key});
@@ -72,8 +71,8 @@ class _CompanyLoginState extends State<CompanyLogin> {
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (_) => MainHome()));
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (_) => InsuranceHomePage()));
                 },
                 child: Text(
                   'Login',
