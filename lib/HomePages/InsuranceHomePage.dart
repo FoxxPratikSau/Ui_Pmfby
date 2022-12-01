@@ -7,6 +7,7 @@ import 'package:ui_pmfby/CardDeails/claims_farmer.dart';
 import 'package:ui_pmfby/CardDeails/details_farmer.dart';
 import 'package:ui_pmfby/CardDeails/report_farmer.dart';
 import 'package:ui_pmfby/CardDeails/track_application_farmer.dart';
+import 'package:ui_pmfby/CardDeails/track_company_id.dart';
 import 'package:ui_pmfby/CardDeails/track_insurance_claims.dart';
 
 class InsuranceHomePage extends StatefulWidget {
@@ -128,10 +129,8 @@ class _InsuranceHomePageState extends State<InsuranceHomePage> {
                       Expanded(
                         child: InkWell(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => TrackInsuranceClaims()));
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (_) => MyWidget()));
                           },
                           child: Container(
                             width: 100,

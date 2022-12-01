@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ui_pmfby/HomePages/FarmerHomePage.dart';
+import 'package:ui_pmfby/CardDeails/track_insurance_claims.dart';
 
-class ReportFarmer extends StatefulWidget {
-  const ReportFarmer({super.key});
+class MyWidget extends StatefulWidget {
+  const MyWidget({super.key});
 
   @override
-  State<ReportFarmer> createState() => _ReportFarmerState();
+  State<MyWidget> createState() => _MyWidgetState();
 }
 
-class _ReportFarmerState extends State<ReportFarmer> {
+class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -21,7 +22,7 @@ class _ReportFarmerState extends State<ReportFarmer> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Put your Report Here",
+                "ApllicationID",
                 style: TextStyle(
                     fontFamily: GoogleFonts.poppins().fontFamily, fontSize: 25),
               ),
@@ -31,7 +32,10 @@ class _ReportFarmerState extends State<ReportFarmer> {
               ),
               ElevatedButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => TrackInsuranceClaims()));
                   },
                   child: Text("Submit"))
             ],

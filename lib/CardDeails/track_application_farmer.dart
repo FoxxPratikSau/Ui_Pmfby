@@ -18,6 +18,13 @@ class _TrackApplicationFarmerState extends State<TrackApplicationFarmer> {
       child: Scaffold(
           body: Column(
         children: [
+          Text(
+            "TRACK",
+            style: TextStyle(
+                fontFamily: GoogleFonts.poppins().fontFamily,
+                fontSize: 50,
+                fontWeight: FontWeight.bold),
+          ),
           Row(
             children: [
               Padding(
@@ -34,7 +41,7 @@ class _TrackApplicationFarmerState extends State<TrackApplicationFarmer> {
                 width: 10,
               ),
               Text(
-                "Data/NotDone",
+                "Done",
                 style: TextStyle(
                     fontFamily: GoogleFonts.poppins().fontFamily, fontSize: 25),
               ),
@@ -59,14 +66,16 @@ class _TrackApplicationFarmerState extends State<TrackApplicationFarmer> {
                 width: 10,
               ),
               Text(
-                "Data/NotDone",
+                "Done",
                 style: TextStyle(
                     fontFamily: GoogleFonts.poppins().fontFamily, fontSize: 25),
               ),
             ],
           ),
-          SizedBox(height: 10,),
-           Row(
+          SizedBox(
+            height: 10,
+          ),
+          Row(
             children: [
               Padding(
                 padding: const EdgeInsets.all(58.0),
@@ -82,7 +91,7 @@ class _TrackApplicationFarmerState extends State<TrackApplicationFarmer> {
                 width: 10,
               ),
               Text(
-                "Data/NotDone",
+                "Not Done",
                 style: TextStyle(
                     fontFamily: GoogleFonts.poppins().fontFamily, fontSize: 25),
               ),

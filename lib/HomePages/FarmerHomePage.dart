@@ -1,14 +1,16 @@
 import 'dart:ui';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ui_pmfby/CardDeails/claims_farmer.dart';
 import 'package:ui_pmfby/CardDeails/details_farmer.dart';
 import 'package:ui_pmfby/CardDeails/report_farmer.dart';
 import 'package:ui_pmfby/CardDeails/track_application_farmer.dart';
-import 'package:ui_pmfby/ChatBot/chatbot_home.dart';
 import 'package:ui_pmfby/Disease/disease.dart';
 import 'package:ui_pmfby/Weather/view/weather_page.dart';
+
+import '../model/model.dart';
 
 class FarmerHome extends StatefulWidget {
   const FarmerHome({Key? key}) : super(key: key);
@@ -18,6 +20,12 @@ class FarmerHome extends StatefulWidget {
 }
 
 class _FarmerHomeState extends State<FarmerHome> {
+  Stream<List<User>> readUsers() => FirebaseFirestore.instance
+      .collection('Govt')
+      .snapshots()
+      .map((snapshot) =>
+          snapshot.docs.map((doc) => User.fromJson(doc.data())).toList());
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -28,8 +36,7 @@ class _FarmerHomeState extends State<FarmerHome> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.message),
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (_) => ChatBotHome()));
+          print('FloatingActionButton pressed ...');
         },
         backgroundColor: Colors.lightBlueAccent,
         elevation: 0,
@@ -78,7 +85,7 @@ class _FarmerHomeState extends State<FarmerHome> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (_) => const DetailsFarmer()));
+                                  builder: (_) => DetailsFarmer()));
                         },
                         child: Container(
                           width: 100,
@@ -266,7 +273,7 @@ class _FarmerHomeState extends State<FarmerHome> {
                                   width: 50,
                                 ),
                                 Text(
-                                  'Report Gravience',
+                                  'Report Grievance',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontSize: 25,
@@ -318,6 +325,59 @@ class _FarmerHomeState extends State<FarmerHome> {
                                 ),
                                 Text(
                                   'Weather Forecast',
+                                  style: TextStyle(
+                                      fontSize: 25,
+                                      fontFamily:
+                                          GoogleFonts.poppins().fontFamily,
+                                      color: Colors.black),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 25,
+                  width: 25,
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) => WeatherPage()));
+                        },
+                        child: Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF90A17D),
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          child: Align(
+                            alignment: AlignmentDirectional(0.05, 0),
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15, 0, 0, 0),
+                                  child: Image.network(
+                                    'https://cdn-icons-png.flaticon.com/512/2152/2152349.png',
+                                    width: 60,
+                                    height: 60,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 50,
+                                ),
+                                Text(
+                                  'Decentra Ledger',
                                   style: TextStyle(
                                       fontSize: 25,
                                       fontFamily:

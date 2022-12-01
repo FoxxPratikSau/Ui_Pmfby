@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                 Tab(
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Company",
+                    child: Text("Govt",
                         style: TextStyle(
                             fontFamily: GoogleFonts.poppins().fontFamily)),
                   ),
@@ -72,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                 Tab(
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Govt officials",
+                    child: Text("Company",
                         style: TextStyle(
                             fontFamily: GoogleFonts.poppins().fontFamily)),
                   ),

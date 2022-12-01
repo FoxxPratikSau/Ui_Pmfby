@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:ui_pmfby/Disease/disease.dart';
 
 class ClaimsFarmer extends StatefulWidget {
   const ClaimsFarmer({super.key});
@@ -55,7 +56,12 @@ class _ClaimsFarmerState extends State<ClaimsFarmer> {
               },
             ),
           ),
-          ElevatedButton(onPressed: () {}, child: Text("Submit"))
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => Home()));
+              },
+              child: Text("Submit"))
         ],
       ),
     ));
