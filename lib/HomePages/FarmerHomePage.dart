@@ -85,7 +85,7 @@ class _FarmerHomeState extends State<FarmerHome> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (_) => DetailsFarmer()));
+                                  builder: (_) => const DetailsFarmer()));
                         },
                         child: Container(
                           width: 100,
@@ -273,7 +273,7 @@ class _FarmerHomeState extends State<FarmerHome> {
                                   width: 50,
                                 ),
                                 Text(
-                                  'Report Grievance',
+                                  'Report Gravience',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontSize: 25,
@@ -325,59 +325,6 @@ class _FarmerHomeState extends State<FarmerHome> {
                                 ),
                                 Text(
                                   'Weather Forecast',
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      fontFamily:
-                                          GoogleFonts.poppins().fontFamily,
-                                      color: Colors.black),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 25,
-                  width: 25,
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => WeatherPage()));
-                        },
-                        child: Container(
-                          width: 100,
-                          height: 100,
-                          decoration: BoxDecoration(
-                            color: Color(0xFF90A17D),
-                            borderRadius: BorderRadius.circular(25),
-                          ),
-                          child: Align(
-                            alignment: AlignmentDirectional(0.05, 0),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 0, 0, 0),
-                                  child: Image.network(
-                                    'https://cdn-icons-png.flaticon.com/512/2152/2152349.png',
-                                    width: 60,
-                                    height: 60,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 50,
-                                ),
-                                Text(
-                                  'Decentra Ledger',
                                   style: TextStyle(
                                       fontSize: 25,
                                       fontFamily:
