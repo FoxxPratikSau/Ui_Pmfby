@@ -45,6 +45,20 @@
 ![WhatsApp Image 2022-12-01 at 17 18 42](https://user-images.githubusercontent.com/92082372/205104887-a63eb5ce-dc1b-4ea4-82f0-225674f65bae.jpeg)
 
 
+-TRACKING
+<img width="607" alt="track" src="https://user-images.githubusercontent.com/91942072/205117753-f9039e0e-3fbf-4b13-98d9-9702c9c1d515.PNG">
+
+-DATAFLOW CHART
+<img width="604" alt="flow" src="https://user-images.githubusercontent.com/91942072/205117864-fd056b79-e998-4b2a-a3b2-9c8e0b34ddd6.PNG">
+
+
+----WHY INSURANCE COMPANY TRUSTS US..
+<img width="605" alt="why" src="https://user-images.githubusercontent.com/91942072/205117975-c41deec2-b25b-4f2f-aeae-fda46739385f.PNG">
+
+
+
+
+
 - By providing the above mentioned solutions a farmerv gets payment digitally and in a faster manner and reuces delay in claim process.For a insurance company can fasten the process of verification.
 
 - For the Government , stress is reduced by preventing agitations by farmers on not receiving claimed money or delay in the process of getting in the insurance.
