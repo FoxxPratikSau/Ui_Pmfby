@@ -37,6 +37,7 @@ dependencies:
     sdk: flutter
   flutterfire_cli: ^0.2.7
   google_fonts: ^3.0.1
+  order_tracker: ^0.0.2
 
 dev_dependencies:
   flutter_lints: ^2.0.0
